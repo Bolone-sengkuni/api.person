@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/api.person/generate"
-	"github.com/valyala/fasthttp"
 	"log"
+	"github.com/api.person/generate"
 	"github.com/goccy/go-json"
+	"github.com/valyala/fasthttp"
 )
 
 
@@ -46,14 +46,4 @@ func main()  {
 	if err := fasthttp.ListenAndServe(addr, requestHandler); err != nil {
 		log.Fatalf("Error in ListenAndServe: %s", err)
 	}
-
-
-
-
-
-
-
-
-
-
 }

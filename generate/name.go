@@ -20,8 +20,8 @@ var generatePerson GeneratePerson
 
 
 func init() {
-	FilesPerson := ReadFileDb("person.db")
-	FilesImages := ReadFileDb("images.db")
+	FilesPerson, _ := ReadFileDb("person.db")
+	FilesImages, _ := ReadFileDb("images.db")
 	generatePerson.DbPerson = GetSql(FilesPerson)
 	generatePerson.DbImage = GetSql(FilesImages)
 }

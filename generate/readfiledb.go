@@ -1,9 +1,10 @@
 package generate
 
 import (
-    "os"
-    "path/filepath"
+	"os"
+	"path/filepath"
 )
+
 
 func findDBFiles(rootDir string, dbname string) (string, error) {
     var dbFiles string
@@ -23,12 +24,17 @@ func findDBFiles(rootDir string, dbname string) (string, error) {
     if err != nil {
         return "", err
     }
+
     return dbFiles, nil
 }
 
 
-func ReadFileDb(dbname string) string {
+func ReadFileDb(dbname string) (string, error) {
 	currentDir, _ := os.Getwd()
     dbFiles, _ := findDBFiles(currentDir, dbname)
-    return dbFiles
+    if dbFiles == ""{
+         return "", nil
+    }
+
+    return dbFiles, nil
 }
